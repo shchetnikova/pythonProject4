@@ -3,10 +3,12 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 import aiogram.utils.markdown as md
+import os
 
-API_TOKEN = "5910631142:AAGmQkPvu87K8TcNgkrjJKaAnGZzkkWkpYQ"
 
-bot = Bot(API_TOKEN)
+bot_token = os.getenv('API_TOKEN')
+
+bot = Bot(bot_token)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 
